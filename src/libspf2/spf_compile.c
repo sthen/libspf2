@@ -361,11 +361,12 @@ SPF_c_parse_var(SPF_response_t *spf_response, SPF_data_var_t *data,
 		val *= 10;
 		val += *p - '0';
 		p++;
-	}
-	if ( val > 128  ||  (val <= 0 && p != token) )
-		return SPF_response_add_error_ptr(spf_response, SPF_E_BIG_SUBDOM,
+
+		if ( val < 0 || val > 128 )
+			return SPF_response_add_error_ptr(spf_response, SPF_E_BIG_SUBDOM,
 						NULL, token,
 						"Subdomain truncation depth too large");
+	}
 	data->num_rhs = val;
 	token = p;
 		
