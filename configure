@@ -14256,35 +14256,6 @@ cat >>confdefs.h <<_ACEOF
 _ACEOF
 
 
-ac_fn_c_check_decl "$LINENO" "ns_t_spf" "ac_cv_have_decl_ns_t_spf" "
-	#ifdef HAVE_SYS_TYPES_H
-	# include <sys/types.h>
-	#endif
-	#ifdef HAVE_SYS_SOCKET_H
-	# include <sys/socket.h>		/* inet_ functions / structs */
-	#endif
-	#ifdef HAVE_NETINET_IN_H
-	# include <netinet/in.h>		/* inet_ functions / structs */
-	#endif
-	#ifdef HAVE_ARPA_NAMESER_H
-	#  include <arpa/nameser.h> /* DNS HEADER struct */
-	#endif
-	#ifdef HAVE_RESOLV_H
-	# include <resolv.h>
-	#endif
-
-"
-if test "x$ac_cv_have_decl_ns_t_spf" = xyes; then :
-  ac_have_decl=1
-else
-  ac_have_decl=0
-fi
-
-cat >>confdefs.h <<_ACEOF
-#define HAVE_DECL_NS_T_SPF $ac_have_decl
-_ACEOF
-
-
 ac_fn_c_check_decl "$LINENO" "ns_t_invalid" "ac_cv_have_decl_ns_t_invalid" "
 	#ifdef HAVE_SYS_TYPES_H
 	# include <sys/types.h>
